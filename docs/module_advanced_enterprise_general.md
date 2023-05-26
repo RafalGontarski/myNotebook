@@ -75,6 +75,25 @@ to meet new requirements or to integrate with other systems.
 ### Testing
 
 #### What are unit test, integration test, system test, regression test, acceptance test? What is the major difference between these?
+>Unit test, integration test, system test, regression test, and acceptance test are different types of software testing that are used to ensure that the software meets its requirements and functions correctly.
+
+* **Unit test:** A unit test is a type of testing that focuses on testing individual units or components of the software in isolation, typically at the code level. It verifies the functionality of a specific piece of code, such as a method or function.
+
+* **Integration test:** Integration testing is a type of testing that verifies that different modules or components of the software work together as expected. It involves testing the interactions between different parts of the software, such as testing the interaction between a database and an application.
+
+* **System test:** System testing is a type of testing that verifies that the entire software system meets its functional and non-functional requirements. It involves testing the software as a whole, including its interactions with other systems and external dependencies.
+
+* **Regression test:** Regression testing is a type of testing that is performed to ensure that changes or updates to the software do not introduce new defects or issues. It involves re-running previously passed tests to ensure that the software still works as expected after changes have been made.
+
+* **Acceptance test:** Acceptance testing is a type of testing that is performed to ensure that the software meets the customer's requirements and is ready for release. It involves testing the software in a real-world scenario, typically by the end-users or stakeholders.
+
+**The major differences between these types of testing are:**
+
+>Scope: Unit tests focus on individual code components, while integration tests focus on interactions between components. System tests focus on the entire system, and acceptance tests focus on the system's compliance with customer requirements.
+
+* **Purpose:** Unit tests are designed to catch defects early in the development process and ensure that individual code components work as expected. Integration tests ensure that the different components of the software work together. System tests verify that the entire system meets its functional and non-functional requirements. Regression tests ensure that changes to the software do not introduce new defects, and acceptance tests verify that the software meets the customer's needs.
+
+* **Timing:** Unit tests are typically run by developers as they write code, while integration tests and system tests are run during the testing phase of the software development lifecycle. Regression tests are run after changes have been made to the software, and acceptance tests are run prior to release to ensure that the software meets customer requirements.
 #### What is code coverage? Why is it used? How you can measure?
 #### What does mocking mean? How would you do it 'manually' (i. e. without using any fancy framework)?
 #### What is a test case? What is an assertion? Give examples!
