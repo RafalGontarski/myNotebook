@@ -10,10 +10,10 @@
 
 >Wystąpienie deadlocka zwykle wynika z następujących warunków:
 
->Mutual exclusion: Zasób nie może być dzielony i jest dostępny tylko dla jednego procesu na raz.
-Hold and wait: Proces trzyma przynajmniej jeden zasób i czeka na inne.
-No preemption: Zasób nie może być odebrany siłą od procesu, który go posiada.
-Circular wait: Istnieje cykl procesów, gdzie każdy proces czeka na zasób, który jest trzymany przez następny proces w cyklu.
+1. **Mutual exclusion**: Zasób nie może być dzielony i jest dostępny tylko dla jednego procesu na raz.
+2. **Hold and wait**: Proces trzyma przynajmniej jeden zasób i czeka na inne.
+3. **No preemption**: Zasób nie może być odebrany siłą od procesu, który go posiada.
+4. **Circular wait**: Istnieje cykl procesów, gdzie każdy proces czeka na zasób, który jest trzymany przez następny proces w cyklu.
 
 Poniżej jest przykład prostego deadlocka w Javie:
 
@@ -49,7 +49,7 @@ Poniżej jest przykład prostego deadlocka w Javie:
         }
     }
 
->W tym przykładzie, thread1 próbuje zablokować resource1 a następnie resource2, podczas gdy thread2 próbuje zablokować resource2 a następnie resource1. Jeżeli oba wątki zaczynają jednocześnie, może dojść do sytuacji gdzie thread1 zablokuje resource1, a thread2 zablokuje resource2, co skutkuje deadlockiem, gdyż każdy z wątków czeka na zasób zablokowany przez drugi wątek.
+>W tym przykładzie, **thread1** próbuje zablokować **resource1** a następnie **resource2**, podczas gdy **thread2** próbuje zablokować **resource2** a następnie **resource1**. Jeżeli oba wątki zaczynają jednocześnie, może dojść do sytuacji gdzie **thread1** zablokuje **resource1**, a **thread2** zablokuje **resource2**, co skutkuje deadlockiem, gdyż każdy z wątków czeka na zasób zablokowany przez drugi wątek.
 
 #### When you need to use threads in an application?
 #### What is the difference between synchronous and asynchronous execution?
