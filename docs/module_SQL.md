@@ -1,31 +1,12 @@
 # SQL
 
-#### What do you know about database normalization?
-
->Database normalization is the process of organizing data in a database in such a way that it reduces redundancy and dependency. This helps to ensure data integrity and consistency and makes it easier to maintain and update the database.
-
->The normalization process involves dividing a database into two or more tables and defining relationships between them. The goal is to eliminate data duplication and ensure that each piece of data is stored in only one place in the database.
-
-**There are several normal forms in database normalization, each with its own set of rules and requirements. The most commonly used normal forms are:**
-
-* First Normal Form (1NF): This requires that each table has a primary key and that each column contains atomic (indivisible) values.
-
-* Second Normal Form (2NF): This requires that each non-key column is dependent on the entire primary key and not just a part of it.
-
-* Third Normal Form (3NF): This requires that each non-key column is dependent only on the primary key and not on any other non-key columns.
-
->There are additional normal forms beyond 3NF, such as Boyce-Codd Normal Form (BCNF) and Fourth Normal Form (4NF), but they are less commonly used.
-
->Normalization is important in database design because it helps to reduce data redundancy, which can lead to inconsistencies and data errors. It also makes it easier to maintain and update the database over time, as changes to one table do not affect other tables in the database. However, normalization can also result in more complex database schemas and slower database performance, so it's important to strike a balance between normalization and performance.
-
-
-#### How can you connect your application to a database server? What are the possible ways?
+#### How can you connect your application to a database server? What are the possible ways? (Jak połączyć swoją aplikację z serwerem bazy danych? Jakie są możliwe sposoby?)
 
 >Aby połączyć swoją aplikację z serwerem bazy danych w Javie, potrzebujesz sterownika JDBC (Java Database Connectivity) dla konkretnej bazy danych, z którą chcesz się połączyć. JDBC to API, które umożliwia komunikację Javy z różnymi bazami danych, takimi jak MySQL, PostgreSQL, Oracle, SQLite itp.
 
 Istnieje kilka sposobów na połączenie aplikacji z serwerem bazy danych. Oto kilka z nich:
 
-> ## 1. Połączenie za pomocą JDBC:
+> 1. Połączenie za pomocą JDBC:
 
         import java.sql.Connection;
         import java.sql.DriverManager;
@@ -48,7 +29,7 @@ Istnieje kilka sposobów na połączenie aplikacji z serwerem bazy danych. Oto k
 
 >Ten przykład pokazuje, jak nawiązać połączenie z bazą danych MySQL. Zauważ, że do tego potrzebny jest sterownik JDBC dla MySQL.
 
-> ## 2. Połączenie za pomocą JPA (Java Persistence API) i Hibernate:
+> 2. Połączenie za pomocą JPA (Java Persistence API) i Hibernate:
 
 >JPA to specyfikacja, a Hibernate to jedna z jej implementacji. Hibernate jest frameworkiem, który ułatwia mapowanie obiektowo-relacyjne (ORM) i abstrahuje wiele szczegółów niskiego poziomu związanych z połączeniem z bazą danych.
 
@@ -74,7 +55,7 @@ Istnieje kilka sposobów na połączenie aplikacji z serwerem bazy danych. Oto k
 
 >Ten przykład pokazuje, jak nawiązać połączenie z bazą danych za pomocą Hibernate. Zauważ, że wymaga to pliku **persistence.xml** w katalogu **src/main/resources/META-INF**, który konfiguruje połączenie z bazą danych.
 
-> ## 3. Połączenie za pomocą Spring Data JPA:
+> 3. Połączenie za pomocą Spring Data JPA:
 
 >Spring Data JPA jest częścią Spring Framework i ułatwia korzystanie z JPA poprzez dostarczanie gotowych do użycia repozytoriów i automatycznego konfigurowania Hibernate.
 
@@ -86,7 +67,7 @@ Istnieje kilka sposobów na połączenie aplikacji z serwerem bazy danych. Oto k
 >W tym przykładzie **UserRepository** jest repozytorium, które możemy użyć do wykonywania operacji na bazie danych związanych z użytkownikami. Spring Data JPA automatycznie dostarcza wiele standardowych metod, takich jak **findAll()**, **findById()**, **save()**, **delete()**, itp. Zauważ, że to wymaga konfiguracji Spring Boot i Spring Data JPA.
 
 
-#### Indexes at database.
+#### Indexes at database. (Indeksy w bazie danych.)
 
 >Indeksy w bazie danych służą do przyspieszenia operacji wyszukiwania danych. Możemy to porównać do indeksu w książce - zamiast przeglądać całą książkę, aby znaleźć konkretną informację, możemy odnaleźć ją w indeksie i dowiedzieć się, na której stronie się znajduje.
 
@@ -101,11 +82,11 @@ Istnieje kilka sposobów na połączenie aplikacji z serwerem bazy danych. Oto k
 
 >Ważne jest, aby pamiętać, że indeksy są narzędziem, które może znacząco poprawić wydajność zapytań, ale wymaga również odpowiedniego planowania i zarządzania. Zbyt wiele indeksów, szczególnie w tabelach, które często ulegają zmianom, może prowadzić do spowolnienia systemu, zamiast przyspieszenia. Dlatego decyzja o dodaniu indeksu powinna być podejmowana po analizie wydajności i zrozumieniu potrzeb aplikacji.
 
-#### The difference between WHERE and HAVING
+#### The difference between WHERE and HAVING (Różnica między WHERE a HAVING)
 
 >**WHERE** i **HAVING** są klauzulami w SQL, które są używane do filtrowania wyników zapytania. Chociaż obie są używane do filtrowania, różnią się tym, kiedy i jak są stosowane.
 
-> ## WHERE
+> **WHERE**
 
 Klauzula **WHERE** jest używana do filtrowania wyników na etapie wiersza danych. Używamy jej, gdy chcemy ograniczyć wyniki zapytania na podstawie wartości w konkretnych kolumnach. Można jej używać z takimi operacjami jak **SELECT**, **UPDATE** i **DELETE**.
 
@@ -115,7 +96,7 @@ Przykład użycia **WHERE**:
 
 >W tym zapytaniu wybieramy wszystkie rekordy z tabeli **pracownicy**, gdzie pensja jest większa niż 5000.
 
-> ## HAVING
+> **HAVING**
 
 > Klauzula **HAVING** jest używana do filtrowania wyników na etapie grupowania danych (tj. po użyciu **GROUP BY**). Klauzulę **HAVING** stosuje się głównie, gdy chcemy filtrować wyniki na podstawie warunku, który dotyczy agregatów, takich jak **SUM**, **AVG**, **COUNT**, **MAX**, **MIN** itp.
 
@@ -130,7 +111,7 @@ Przykład użycia **HAVING**:
 
 >Podsumowując, kluczowa różnica polega na tym, że **WHERE** jest używane do filtrowania przed agregacją, a **HAVING** do filtrowania po agregacji.
 
-#### What are aggregate functions in SQL? Give 3 examples.
+#### What are aggregate functions in SQL? Give 3 examples. (Czym są funkcje agregujące w SQL? Podaj 3 przykłady.)
 
 >Funkcje agregujące w SQL są to typ funkcji, które wykonują obliczenia na zestawie wartości i zwracają pojedynczą wartość. Są one często używane w połączeniu z klauzulą GROUP BY w zapytaniu SQL, aby zgrupować zestaw wyników według jednego lub więcej kolumn.
 
@@ -156,7 +137,7 @@ Zwróci średnią płacę pracowników.
 
 >Inne funkcje agregujące w SQL obejmują **MIN()**, **MAX()**, **GROUP_CONCAT()**, **STDDEV()** i wiele innych.
 
-#### What are database transactions? When to use?
+#### What are database transactions? When to use? (Czym są transakcje bazodanowe? Kiedy użyć?)
 
 >Transakcje baz danych to jednostka pracy wykonana w systemie zarządzania bazą danych (DBMS), która jest traktowana w sposób spójny i niepodzielny. Oznacza to, że albo wszystkie operacje w ramach transakcji są zakończone pomyślnie (commit), albo żadna z nich nie jest zakończona (rollback), w przypadku gdy wystąpi jakikolwiek błąd.
 
@@ -179,7 +160,7 @@ Oto przykład transakcji w SQL:
 >Transakcje są również istotne dla zachowania integralności danych i zapewnienia spójności bazy danych. Transakcje baz danych opierają się na czterech właściwościach, znanych jako ACID (Atomicity, Consistency, Isolation, Durability), czyli Atomowość, Spójność, Izolacja, Trwałość.
 
 
-#### What are the differences between DELETE and DROP?
+#### What are the differences between DELETE and DROP? (Jakie są różnice między DELETE i DROP?)
 
 >**DELETE** i **DROP** to dwa różne polecenia SQL, które są używane do usuwania danych z bazy danych, ale mają różne zastosowania i konsekwencje.
 
@@ -197,7 +178,7 @@ Przykładowe użycie:
 
 >Zasadniczo, **DELETE** jest poleceniem DML (Data Manipulation Language), które wpływa na wiersze w tabeli, a **DROP** jest poleceniem DDL (Data Definition Language), które wpływa na strukturę bazy danych. Podczas gdy **DELETE** pozwala na zachowanie struktury tabeli dla przyszłego użycia, **DROP** usuwa całą tabelę lub inną strukturę bazy danych bez możliwości odzyskania.
 
-#### What are the differences between INNER JOIN and OUTER JOIN?
+#### What are the differences between INNER JOIN and OUTER JOIN? (Jakie są różnice między INNER JOIN a OUTER JOIN?)
 
 >**INNER JOIN** i **OUTER JOIN** to dwa typy operacji łączenia w SQL, które są używane do łączenia tabel na podstawie wspólnych kolumn. Wybór między **INNER JOIN** a **OUTER JOIN** zależy od tego, jakie dane chcesz otrzymać.
 
@@ -213,7 +194,7 @@ Przykładowe użycie:
 
 Przykładowe użycie:
 
-#### What are the differences between JOIN and UNION?
+#### What are the differences between JOIN and UNION? (Jakie są różnice między JOIN a UNION?)
 
 >**INNER JOIN** i **OUTER JOIN** to dwa typy operacji łączenia w SQL, które są używane do łączenia tabel na podstawie wspólnych kolumn. Wybór między **INNER JOIN** a **OUTER JOIN** zależy od tego, jakie dane chcesz otrzymać.
 
@@ -237,7 +218,7 @@ Przykładowe użycie:
 
 Różnica między **INNER JOIN** a **OUTER JOIN** polega na tym, że **INNER JOIN** zwraca tylko wiersze, które mają dopasowania w obu tabelach, podczas gdy **OUTER JOIN** zwraca wszystkie wiersze z jednej tabeli i dopasowane wiersze z drugiej tabeli, a jeśli nie ma dopasowań, wynik to NULL.
 
-#### What are the differences between LEFT JOIN and RIGHT JOIN?
+#### What are the differences between LEFT JOIN and RIGHT JOIN? (Jakie są różnice między LEFT JOIN a RIGHT JOIN?)
 
 >**LEFT JOIN** i **RIGHT JOIN** to dwa typy **OUTER JOIN** w SQL, które określają, jakie dane powinny być zwracane, gdy nie ma dopasowań między łączonymi tabelami.
 
@@ -259,7 +240,7 @@ Przykładowe użycie:
 
 >Różnica między **LEFT JOIN** a **RIGHT JOIN** polega na tym, z której tabeli są zwracane wszystkie wiersze. **LEFT JOIN** zwraca wszystkie wiersze z lewej tabeli, niezależnie od tego, czy istnieją dopasowania w prawej tabeli, podczas gdy **RIGHT JOIN** zwraca wszystkie wiersze z prawej tabeli, niezależnie od tego, czy istnieją dopasowania w lewej tabeli. Wybór między **LEFT JOIN** a **RIGHT JOIN** zależy od tego, jakie dane chcesz otrzymać.
 
-#### What are the differences between One to Many and Many to One relationships?
+#### What are the differences between One to Many and Many to One relationships? (Jakie są różnice między relacjami jeden do wielu i wiele do jednego?)
 
 >Relacje "One to Many" i "Many to One" odnoszą się do typów związków między encjami w bazie danych. Wybór typu relacji zależy od natury danych, które reprezentują twoje tabele.
 
@@ -297,7 +278,7 @@ Przykładowa struktura tabeli:
 
 >W praktyce "One to Many" i "Many to One" to dwa sposoby patrzenia na ten sam rodzaj relacji, w zależności od tego, z której perspektywy patrzymy. W przypadku relacji "One to Many" skupiamy się na encji, która może być powiązana z wieloma innymi (np. jeden autor, wiele książek), natomiast w przypadku relacji "Many to One" skupiamy się na wielu encjach, które mogą być powiązane z jedną inną (np. wiele książek, jeden autor).
 
-#### What are the differences between TRUNCATE and DROP?
+#### What are the differences between TRUNCATE and DROP? (Jakie są różnice między TRUNCATE i DROP?)
 
 >**TRUNCATE** i **DROP** to dwa polecenia SQL używane do usuwania danych z bazy danych, ale różnią się w sposobie działania i skutkach.
 
@@ -315,7 +296,7 @@ Przykładowe użycie:
 
 >Podsumowując, różnica między **TRUNCATE** a **DROP** polega na tym, że **TRUNCATE** usuwa tylko dane z tabeli, ale zachowuje strukturę tabeli, podczas gdy **DROP** usuwa całą tabelę (struktura + dane). Ważne jest, aby używać tych poleceń z ostrożnością, ponieważ obie operacje są nieodwracalne.
 
-#### What do you know about database normalization?
+#### What do you know about database normalization? (Co wiesz o normalizacji baz danych?)
 
 >Normalizacja bazy danych to proces projektowania bazy danych w celu zminimalizowania duplikacji danych, co prowadzi do lepszej integralności danych i ułatwia zarządzanie danymi.
 
@@ -340,7 +321,7 @@ Przykładowa tabela spełniająca 1NF:
 
 >Pomimo wielu zalet, normalizacja nie jest zawsze idealna. Może prowadzić do zwiększonej złożoności zapytań i wymagać więcej złączeń, co może wpłynąć na wydajność. Dlatego ważne jest, aby znaleźć odpowiednią równowagę między normalizacją a potrzebami wydajnościowymi.
 
-#### What is a clause?
+#### What is a clause? (Co to jest klauzula?)
 
 >W kontekście SQL, klauzula to część zapytania SQL, która służy do określenia pewnych warunków lub modyfikacji zwracanych danych. Zapytanie SQL składa się z jednej lub więcej klauzul.
 
@@ -387,7 +368,7 @@ Przykład:
 >Wszystkie te klauzule służą do tworzenia złożonych zapytań SQL, które spełniają konkretne wymagania biznesowe.
 
 
-#### What is a constraint?
+#### What is a constraint? (Co to jest ograniczenie?)
 
 >Ograniczenia (constraints) w SQL służą do określania zasad nałożonych na kolumny w tabeli. Są one używane do zapewnienia niezawodności i dokładności danych przechowywanych w tabeli. Oto kilka typów ograniczeń, które można zastosować w SQL:
 
@@ -443,7 +424,7 @@ Przykład:
 
 >Ograniczenia są istotnym aspektem projektowania bazy danych, ponieważ pomagają zapewnić integralność i prawidłowość danych.
 
-#### What is a correlated query(sub query)?
+#### What is a correlated query(sub query)? (Co to jest zapytanie skorelowane (zapytanie podrzędne)?)
 
 >Skojarzone zapytanie (correlated subquery) to zapytanie zagnieżdżone (subquery), które zależy od zewnętrznego zapytania. W przeciwieństwie do zwykłego zagnieżdżonego zapytania, skojarzone zapytanie nie jest samodzielnym zapytaniem: dla każdego wiersza zewnętrznego zapytania, skojarzone zapytanie jest wykonywane raz.
 
@@ -459,7 +440,7 @@ Przykład skojarzonego zapytania może wyglądać tak:
 
 >Skojarzone zapytania mogą być mocy, ale są też zazwyczaj mniej wydajne niż inne konstrukcje, takie jak JOIN. Powodem jest to, że skojarzone zapytanie musi być wykonane dla każdego wiersza zwracanego przez zewnętrzne zapytanie.
 
-#### What is a Primary Key and what is a Foreign Key?
+#### What is a Primary Key and what is a Foreign Key? (Co to jest klucz podstawowy, a co to jest klucz obcy?)
 
 >**Primary Key (Klucz główny)** to unikalny identyfikator rekordu w tabeli bazy danych. Każda tabela powinna mieć klucz główny, a każdy rekord powinien mieć unikalną wartość klucza głównego. Klucz główny nie może mieć wartości NULL.
 
@@ -486,7 +467,7 @@ Przykład użycia klucza obcego:
 
 >Klucz główny i klucz obcy są istotnymi elementami projektowania relacyjnej bazy danych, które pomagają zapewnić integralność danych i tworzyć relacje między tabelami.
 
-#### What is an index and when is it used?
+#### What is an index and when is it used? (Co to jest indeks i kiedy jest używany?)
 
 >Indeks w bazie danych to struktura, która pomaga przyspieszyć operacje na danych, takie jak wyszukiwanie, sortowanie czy łączenie (join). Można to porównać do indeksu w książce - zamiast przeszukiwać każdą stronę, aby znaleźć konkretną informację, możemy skorzystać z indeksu, który wskazuje nam, gdzie znajduje się poszukiwana informacja.
 
@@ -501,7 +482,7 @@ Przykład tworzenia indeksu:
 
 >Indeksy powinny być używane, gdy często wykonujesz zapytania, które przeszukują lub sortują dane według konkretnej kolumny. Pamiętaj jednak, że indeksy zajmują dodatkową przestrzeń dyskową i mogą spowolnić operacje modyfikacji danych (np. INSERT, UPDATE, DELETE), ponieważ indeksy również muszą być aktualizowane. Dlatego ważne jest, aby znaleźć odpowiednią równowagę między liczbą indeksów a wydajnością operacji na danych.
 
-#### What is an ORM? What are the benefits, when to use?
+#### What is an ORM? What are the benefits, when to use? (Co to jest ORM? Jakie są korzyści, kiedy stosować?)
 
 >ORM (Object-Relational Mapping) to technika programowania, która umożliwia konwersję (mapowanie) między relacyjnymi bazami danych a obiektowymi modelami danych w programowaniu.
 
@@ -537,7 +518,7 @@ Zalety korzystania z ORM obejmują:
 
 >Kiedy używać ORM? ORM jest szczególnie przydatne w dużych aplikacjach, gdzie ilość zapytań do bazy danych jest duża i gdzie utrzymanie bezpośredniego kodu SQL byłoby trudne. Niemniej jednak, decyzja o użyciu ORM powinna być podjęta z uwzględnieniem specyfiki projektu, ponieważ ORM może wprowadzać pewne złożoności i potencjalne problemy wydajnościowe.
 
-#### What is an SQL Injection and how can it be caused?
+#### What is an SQL Injection and how can it be caused? (Co to jest SQL Injection i jak można go wywołać?)
 
 >SQL Injection to rodzaj ataku na systemy informatyczne, który wykorzystuje luki w zabezpieczeniach związanych z interakcją z bazami danych. Atak polega na wprowadzeniu do zapytania SQL szkodliwego kodu, który może umożliwić nieautoryzowany dostęp do danych, ich modyfikację, a nawet usunięcie.
 
@@ -562,7 +543,7 @@ Przykładowy kod, który jest narażony na atak SQL Injection:
 
 >W tym przypadku, nawet jeśli użytkownik wprowadził szkodliwy kod, jest on traktowany jako pojedynczy parametr zapytania, a nie jako część zapytania SQL, co uniemożliwia wykonanie szkodliwego kodu.
 
-#### What is SQL Injection?
+#### What is SQL Injection? (Co to jest wstrzykiwanie SQL?)
 
 >SQL Injection to technika ataku, która polega na manipulowaniu zapytaniami SQL, poprzez wprowadzanie szkodliwych danych przez użytkownika. Te dane mogą prowadzić do nieautoryzowanego dostępu, uszkodzenia danych, a nawet całkowitej utraty bazy danych.
 
@@ -598,7 +579,7 @@ Przykład w języku Python (z użyciem biblioteki sqlite3):
 
 * **Używanie ORM**: Object-Relational Mapping (ORM) jest techniką, która często oferuje wbudowaną ochronę przed atakami SQL Injection.
 
-#### What is the trigger? Bring an example of using?
+#### What is the trigger? Bring an example of using? (Co jest wyzwalaczem? Podaj przykład użycia?)
 
 >Trigger, czyli wyzwalacz, to specjalny rodzaj procedury przechowywanej, która jest automatycznie wywoływana (uruchamiana) przez serwer baz danych w odpowiedzi na określone zdarzenia na konkretnej tabeli lub widoku w bazie danych. Zdarzenia te mogą obejmować operacje INSERT, UPDATE i DELETE.
 
@@ -618,7 +599,7 @@ Oto przykład wykorzystania triggera w SQL:
 
 Ważne jest, aby pamiętać, że nadużywanie triggerów może prowadzić do złożoności w zarządzaniu bazą danych i problemów z wydajnością, ponieważ każde uruchomienie triggera wymaga dodatkowych zasobów. Dlatego zawsze warto rozważyć, czy dana operacja nie mogłaby być lepiej zaimplementowana po stronie aplikacji.
 
-#### What kind of database relations do you know? How to define them?
+#### What kind of database relations do you know? How to define them? (Jakie znasz rodzaje relacji z bazami danych? Jak je zdefiniować?)
 
 >Relacje między tabelami w bazie danych służą do łączenia danych z różnych tabel i są kluczowym elementem relacyjnych baz danych. Istnieją trzy podstawowe typy relacji:
 
@@ -649,7 +630,7 @@ Ważne jest, aby pamiętać, że nadużywanie triggerów może prowadzić do zł
 
 >W tym przykładzie, **DepartamentID** w tabeli **Pracownik** jest kluczem obcym, który odnosi się do klucza głównego **ID** w tabeli **Departament**. Tworzy to relację One-to-Many między **Departament** a **Pracownik**: jeden departament może mieć wielu pracowników, ale każdy pracownik jest przypisany do dokładnie jednego departamentu.
 
-#### What kind of JOIN types do you know in SQL? Could you give examples?
+#### What kind of JOIN types do you know in SQL? Could you give examples? (Jakie typy JOIN znasz w SQL? Czy możesz podać przykłady?)
 
 >W SQL występuje kilka typów operacji JOIN, które służą do łączenia wierszy z dwóch lub więcej tabel. Oto najczęściej używane typy JOIN w SQL:
 
@@ -679,7 +660,7 @@ Ważne jest, aby pamiętać, że nadużywanie triggerów może prowadzić do zł
 
 >Pamiętaj, że nie wszystkie systemy zarządzania bazami danych (DBMS) obsługują wszystkie typy JOIN. Na przykład MySQL nie obsługuje operacji FULL JOIN, ale można ją symulować za pomocą kombinacji LEFT i RIGHT JOIN.
 
-#### When do you use the DISTINCT keyword in SQL?
+#### When do you use the DISTINCT keyword in SQL? (Kiedy używasz słowa kluczowego DISTINCT w SQL?)
 
 >Słowo kluczowe **DISTINCT** w SQL jest używane do wyeliminowania duplikatów z wyników zapytania.
 

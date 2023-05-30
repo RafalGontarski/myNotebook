@@ -1,6 +1,6 @@
 # GIT
 
-#### What are the differences between Git and GitHub?
+#### What are the differences between Git and GitHub? (Jakie są różnice między Git a GitHub?)
 
 >Git i GitHub to dwa często stosowane narzędzia w rozwoju oprogramowania, ale mają różne zastosowania.
 
@@ -57,7 +57,7 @@
     $ git commit -m "Modyfikacja komunik
 
 
-#### What is a commit?
+#### What is a commit? (Co to jest zatwierdzenie?)
 
 >Commit to termin używany w systemach kontroli wersji, takich jak Git. Commit, zwany również "zatwierdzeniem", to akt zapisania zmian w repozytorium. Kiedy dokonujesz commitu, zapisujesz swój kod w danej formie, którą można później przywrócić, jeżeli zajdzie taka potrzeba. Każdy commit jest zidentyfikowany przez unikalny identyfikator (SHA hash), który pozwala na śledzenie zmian.
 
@@ -87,7 +87,7 @@
 
 >Zmieniliśmy plik **main.py**, dodaliśmy go do obszaru staging i dokonaliśmy commitu. Potem sprawdziliśmy log commitów, aby upewnić się, że nasz commit jest zapisany w historii projektu.
 
-#### What are the differences between remote and local repositories?
+#### What are the differences between remote and local repositories? (Jakie są różnice między repozytoriami zdalnymi i lokalnymi?)
 
 >Repozytoria lokalne i zdalne to dwa kluczowe elementy, które musisz zrozumieć, kiedy pracujesz z Git.
 
@@ -113,7 +113,7 @@
 
 >W tym przykładzie najpierw tworzysz nowe repozytorium lokalne za pomocą **git init**. Następnie dodajesz plik **readme.md** do repozytorium i dokonujesz commitu. Potem dodajesz repozytorium zdalne za pomocą **git remote add**, gdzie **origin** to standardowa nazwa dla głównego repozytorium zdalnego, a URL to miejsce, gdzie znajduje się twoje repozytorium zdalne. Na końcu wysyłasz swoje zmiany do repozytorium zdalnego za pomocą **git push**.
 
-#### What commands do you use to send your code to the remote repository?
+#### What commands do you use to send your code to the remote repository? (Jakich poleceń używasz do wysyłania kodu do zdalnego repozytorium?)
 
 >Aby wysłać swój kod do zdalnego repozytorium, musisz użyć polecenia **git push**. Ale zanim to zrobisz, musisz najpierw dodać swoje zmiany do repozytorium i zatwierdzić je, używając **git add** i **git commit**. Poniżej znajduje się przykładowy proces:
 
@@ -137,7 +137,7 @@
 
 >Jednak jeżeli sklonowałeś repozytorium za pomocą git clone, zdalne repozytorium **origin** jest już ustawione i nie musisz go konfigurować za pomocą **git remote add**.
 
-#### What are the differences between git fetch and git pull commands?
+#### What are the differences between git fetch and git pull commands? (Jakie są różnice między poleceniami git fetch i git pull?)
 
 >Komendy **git fetch** i **git pull** są używane do interakcji z zdalnym repozytorium, ale działają w nieco różny sposób.
 
@@ -161,7 +161,7 @@ Zobaczmy, jak to wygląda w praktyce:
 
 Pamiętaj, że **git pull** może potencjalnie wprowadzić konflikty, jeśli twoja lokalna wersja kodu jest różna od tej na serwerze. Zawsze warto być świadomym tego, co dzieje się w twoim lokalnym repozytorium, zanim użyjesz **git pull**.
 
-#### What is a merge conflict and how it can be resolved?
+#### What is a merge conflict and how it can be resolved? (Co to jest konflikt scalania i jak można go rozwiązać?)
 
 >Konflikt scalenia (merge conflict) w Git występuje, gdy dwa różne branch'e wprowadzają zmiany w tych samych liniach tego samego pliku, lub gdy jeden branch usuwa plik, podczas gdy drugi branch wprowadza do niego zmiany. Git nie jest w stanie automatycznie zdecydować, którą wersję zachować, i dlatego pojawia się konflikt scalenia.
 
@@ -188,7 +188,7 @@ Pamiętaj, że **git pull** może potencjalnie wprowadzić konflikty, jeśli two
 
 >Pamiętaj, że najlepszym sposobem na uniknięcie konfliktów scalenia jest regularne aktualizowanie swojego branch'a z głównym branch'em (zazwyczaj "master" lub "main"), aby twoje zmiany były na bieżąco z innymi zmianami w projekcie.
 
-#### What is a branch?
+#### What is a branch? (Co to jest oddział?(gałęź))
 
 >Gałąź (branch) to funkcja w systemie kontroli wersji, takim jak Git, która pozwala rozwijać funkcje izolowane od siebie. Każda gałąź reprezentuje niezależną linię rozwoju. Możesz pracować na swojej gałęzi bez wpływania na główną linię rozwoju (zwykle nazywaną **master** lub **main**).
 
@@ -218,7 +218,7 @@ Poniżej znajduje się przykładowy proces pracy z gałęziami:
 
 >Warto zauważyć, że możemy utworzyć nową gałąź i od razu się na nią przełączyć, używając polecenia **git checkout -b nazwa_gałęzi**.
 
-#### What is a pull/merge request and why is it used?
+#### What is a pull/merge request and why is it used? (Co to jest żądanie ściągnięcia/scalenia i dlaczego jest używane?)
 
 >Pull request (nazywany też merge request w niektórych systemach, takich jak GitLab) to funkcja dostępna w wielu systemach kontroli wersji, które działają na zasadzie hostingu, takich jak GitHub, Bitbucket czy GitLab.
 
@@ -246,7 +246,7 @@ Poniżej znajduje się przykładowy proces pracy z gałęziami:
 >Pull requesty są kluczowym elementem pracy zespołowej przy użyciu Git. Umożliwiają code review, co pomaga utrzymać jakość kodu, poprawiać umiejętności programistyczne i zapewniać, że wszyscy członkowie zespołu są na bieżąco z tym, co dzieje się w projekcie.
 
 
-#### What are the differences between a merge and a rebase?
+#### What are the differences between a merge and a rebase? (Jakie są różnice między scalaniem a rebase?)
 
 >Operacje **merge** i **rebase** to dwie różne metody łączenia zmian z jednej gałęzi do innej w systemie kontroli wersji Git. Obie metody mają swoje zastosowania i skutki, a wybór między nimi zależy od konkretnego przypadku.
 
@@ -273,7 +273,7 @@ Główna różnica między tymi dwiema metodami polega na tym, jak są prezentow
 
 >Ważne jest, aby zrozumieć, że **rebase** może być bardziej skomplikowany dla początkujących i może prowadzić do problemów, jeśli używany jest niepoprawnie, szczególnie gdy pracujesz z innymi w zdalnym repozytorium. Dlatego zawsze warto dobrze zrozumieć, co robi rebase, zanim zaczniesz go używać w swoich projektach.
 
-#### What are the differences between git revert and git reset commands?
+#### What are the differences between git revert and git reset commands? (Jakie są różnice między poleceniami git revert i git reset?)
 
 >**git revert** i **git reset** to dwie różne operacje w systemie kontroli wersji Git, które umożliwiają cofanie zmian. Chociaż obie operacje mają podobny cel, działają w zasadniczo różny sposób i są używane w różnych kontekstach.
 

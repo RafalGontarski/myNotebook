@@ -1,7 +1,8 @@
 # Programming Basic
 
 
-#### Does Java have dynamic or static typing? What does it mean?
+#### Does Java have dynamic or static typing? What does it mean? (Czy Java obsługuje typowanie dynamiczne czy statyczne? Co to znaczy?)
+
 >Java używa statycznego typowania, co oznacza, że typy zmiennych muszą być zadeklarowane przed użyciem i nie mogą być zmieniane po deklaracji. Na przykład, jeśli zadeklarujesz zmienną jako int, nie możesz później przypisać do niej wartości String.
 
 >Statyczne typowanie pomaga zapewnić większą bezpieczeństwo typów, ponieważ kompilator może wykryć błędy typów przed uruchomieniem programu. W rzeczywistości, Java jest silnie typowana, co oznacza, że nie wykonuje automatycznych konwersji typów, które mogą prowadzić do nieoczekiwanych wyników.
@@ -13,7 +14,7 @@ Przykład:
 
 >Ten kod nie zostanie skompilowany, ponieważ próbujemy przypisać wartość String do zmiennej, która została zadeklarowana jako int. To jest przykład, jak statyczne typowanie w Javie pomaga wykrywać błędy przed uruchomieniem programu.
 
-#### Throws keyword
+#### Throws keyword (Rzuca (wyrzuć) słowo kluczowe)
 
 >W Javie, słowo kluczowe **throws** jest używane w deklaracji metody do wskazania, że metoda może rzucić wyjątek określonego typu. Wyjątki są sytuacjami, które mogą wystąpić podczas wykonywania programu i które zakłócają normalny przepływ sterowania programu.
 
@@ -38,7 +39,7 @@ Przykład:
 
 >W tym przykładzie metoda **riskyMethod()** deklaruje, że może rzucić wyjątek **Exception**, używając słowa kluczowego **throws**. Metoda **main()** wywołuje **riskyMethod()** i obsługuje możliwy wyjątek, używając bloku **try**/**catch**.
 
-#### Try-catch block (how does it work?)
+#### Try-catch block (how does it work?) (Blok try-catch (jak to działa?))
 
 >Blok **try**/**catch** jest używany w Javie do obsługi wyjątków, które mogą wystąpić podczas wykonywania programu. Wyjątki to nieprzewidziane błędy, które zakłócają normalny przepływ sterowania programu.
 
@@ -61,7 +62,7 @@ Przykład:
 
 >W tym przykładzie, próbujemy przypisać wartość do indeksu, który jest poza zakresem tablicy. To generuje wyjątek **ArrayIndexOutOfBoundsException**. Ponieważ ten kod jest w bloku **try**, wyjątek jest przechwytywany i obsługiwany w bloku **catch**, który wyświetla komunikat o błędzie.
 
-#### Try-catch-with-resources block (how does it work?)
+#### Try-catch-with-resources block (how does it work?) (Blok try-catch-with-resources (jak to działa?))
 
 >Konstrukcja **try**-with-resources, wprowadzona w Javie 7, jest specjalną wersją bloku **try**/**catch**, która pozwala na automatyczne zamknięcie zasobów używanych w bloku **try**. "Zasoby" tutaj to obiekty, które implementują interfejs **java.lang.AutoCloseable** lub **java.io.Closeable**, co oznacza, że mają metodę **close()**, która może być wywołana, gdy zasób nie jest już potrzebny.
 
@@ -88,7 +89,7 @@ Przykład:
 
 >W tym przykładzie, **BufferedReader** jest zasobem, który jest otwarty w bloku **try** i automatycznie zamykany po zakończeniu bloku, niezależnie od tego, czy wystąpi wyjątek, czy nie. Jeśli podczas czytania pliku wystąpi **IOException**, jest on przechwytywany i obsługiwany w bloku **catch**.
 
-#### What are the differences between `break` and `continue` keywords?
+#### What are the differences between `break` and `continue` keywords? (Jakie są różnice między słowami kluczowymi `break` i `continue`?)
 
 >Słowa kluczowe **break** i **continue** w Javie są używane do kontrolowania przepływu w pętlach (**for**, **while**, **do-while**).
 
@@ -120,7 +121,7 @@ Oto przykład ilustrujący różnicę:
 
 >W drugiej pętli, kiedy **i == 5**, **continue** pomija resztę tej iteracji i przechodzi do następnej, więc **5** nie jest drukowane, ale pętla kontynuuje działanie dla **i > 5**.
 
-#### What are the differences between `import` and `static import` keywords?
+#### What are the differences between `import` and `static import` keywords? (Jakie są różnice między słowami kluczowymi `import` i `static import`?)
 
 >Słowa kluczowe **import** i **static import** są używane w Javie do importowania klas, metod i zmiennych ze zdefiniowanych pakietów.
 
@@ -144,7 +145,7 @@ Przykład:
 
 >W tym przykładzie, zaimportowaliśmy klasę **Arrays** i statyczny członek **PI** klasy **Math**. Dzięki temu możemy używać **sort()** i **PI** bez podawania pełnej nazwy klasy.
 
-#### What are the differences between `private` and `package-private` access modifiers?
+#### What are the differences between `private` and `package-private` access modifiers? (Jakie są różnice między modyfikatorami dostępu `private` i `package-private`?)
 
 >W Javie mamy cztery modyfikatory dostępu: **private**, **package-private** (domyślny, kiedy nie używamy żadnego modyfikatora), **protected** i **public**. Definiują one, gdzie klasa, metoda lub zmienna mogą być dostępne.
 
@@ -163,7 +164,7 @@ Oto przykład:
 
 >W tym przykładzie **privateVariable** jest dostępne tylko wewnątrz **MyClass**. **packagePrivateVariable** jest dostępne dla wszystkich klas w pakiecie **com.example**, ale nie jest dostępne dla klas w innych pakietach.
 
-#### What are the differences between `protected` and `package-private` access modifiers?
+#### What are the differences between `protected` and `package-private` access modifiers? (Jakie są różnice między modyfikatorami dostępu `protected` i `package-private`?)
 
 >W Javie, modyfikatory **protected** i **package-private** (domyślny, kiedy nie używamy żadnego modyfikatora) są używane do określenia dostępności klas, metod i zmiennych.
 
@@ -182,7 +183,7 @@ Oto przykład:
 
 >W tym przykładzie **protectedVariable** jest dostępne dla wszystkich klas w pakiecie **com.example**, oraz dla wszystkich klas w innych pakietach, które dziedziczą po **MyClass**. **packagePrivateVariable** jest dostępne tylko dla klas w pakiecie **com.example**.
 
-#### What are the differences between `public` and `protected` access modifiers?
+#### What are the differences between `public` and `protected` access modifiers? (Jakie są różnice między modyfikatorami dostępu „publiczny” i „chroniony”?)
 
 >Modyfikatory dostępu **public** i **protected** w Javie służą do określenia, gdzie klasa, metoda lub zmienna mogą być dostępne.
 
@@ -201,7 +202,8 @@ Przykład:
 
 >W tym przykładzie **publicVariable** jest dostępna wszędzie, więc można do niej uzyskać dostęp z dowolnej klasy, niezależnie od tego, czy jest ona w tym samym pakiecie, czy nie. Z kolei **protectedVariable** jest dostępna dla wszystkich klas w pakiecie **com.example**, a także dla klas dziedziczących po **MyClass** w innych pakietach.
 
-#### What are the differences between == and equals?
+#### What are the differences between == and equals? (Jakie są różnice między == a equals?)
+
 >W Javie, **==** i **equals()** są obie używane do porównywania obiektów, ale istnieje między nimi istotna różnica.
 
 * Operator **==** jest używany do porównywania referencji do obiektów, a nie faktycznych wartości tych obiektów. Oznacza to, że **==** zwróci **true** tylko wtedy, gdy obie referencje wskazują na ten sam obiekt.
@@ -219,7 +221,7 @@ Przykład:
 
 >W tym przykładzie, **s1** i **s2** to dwie różne referencje do dwóch różnych obiektów, więc **s1 == s2** zwraca **false**. Jednak **s1** i **s2** mają tę samą wartość ("Hello"), więc **s1.equals(s2)** zwraca **true**.
 
-#### What are the differences between Arrays and Lists?
+#### What are the differences between Arrays and Lists? (Jakie są różnice między tablicami a listami?)
 
 >Tablice (**Arrays**) i listy (**Lists**) są dwoma fundamentalnymi strukturami danych w Javie, ale istnieje między nimi kilka kluczowych różnic:
 
@@ -252,7 +254,7 @@ Oto przykład, który ilustruje te różnice:
 
 >W tym przykładzie, tablica **array** ma stały rozmiar i nie można do niej dodać więcej elementów po jej utworzeniu. Z drugiej strony, lista **list** ma dynamiczny rozmiar, więc możemy dodawać do niej elementy na bieżąco.
 
-#### What are the differences between Lists and Maps?
+#### What are the differences between Lists and Maps? (Jakie są różnice między listami a mapami?)
 
 >**List** i **Map** to dwa podstawowe interfejsy kolekcji w Javie, które mają różne cechy:
 
@@ -285,7 +287,7 @@ Oto przykład, który ilustruje te różnice:
 
 
 
-#### What are the differences between Lists and Sets?
+#### What are the differences between Lists and Sets? (Jakie są różnice między listami a zestawami?)
 
 >**List** i **Set** to dwa podstawowe interfejsy kolekcji w Javie, które mają różne cechy:
 
@@ -316,7 +318,7 @@ Oto przykład, który ilustruje te różnice:
 
 >W tym przykładzie, lista **list** przechowuje elementy w porządku ich dodawania i pozwala na powtarzające się elementy. Zbiór **set** przechowuje tylko unikalne elementy i nie gwarantuje żadnego konkretnego porządku.
 
-#### What is a bytecode?
+#### What is a bytecode? (Co to jest kod bajtowy?)
 
 >Bytecode, zwany też kodem bajtowym, to forma pośrednia kodu, która jest bardziej abstrakcyjna niż kod maszynowy. Głównym celem bytecode'u jest zapewnienie platformowej niezależności kodu, co oznacza, że ten sam bytecode może być uruchamiany na różnych systemach operacyjnych bez konieczności modyfikacji.
 
@@ -336,7 +338,7 @@ Gdy skompilujemy go za pomocą kompilatora Javy (javac):
 
 >Kompilator wygeneruje plik **HelloWorld.class**, który zawiera bytecode Javy. Bytecode ten można potem uruchomić na dowolnej maszynie, która ma zainstalowaną Java Virtual Machine (JVM), niezależnie od systemu operacyjnego. Bytecode jest zatem jednym z kluczowych elementów umożliwiających przenośność kodu w Javie.
 
-#### What is a constructor? What does it return?
+#### What is a constructor? What does it return? (Co to jest konstruktor? Co to zwraca?)
 
 >Konstruktor to specjalna metoda w klasie, która jest wywoływana automatycznie podczas tworzenia obiektu tej klasy. Konstruktor ma tę samą nazwę, co nazwa klasy i nie ma typu zwracanego (nawet void).
 
@@ -365,7 +367,7 @@ Aby utworzyć obiekt klasy **Student**, używamy konstruktora w taki sposób:
 
 >Konstruktor nie zwraca żadnej wartości. Słowo **new** jest używane do tworzenia nowego obiektu, a konstruktor jest wywoływany, aby zainicjować ten obiekt. Wartością zwracaną przez wyrażenie **new Student("Jan Kowalski", 20)** jest nowy obiekt klasy **Student**.
 
-#### What is Boxing and Unboxing?
+#### What is Boxing and Unboxing? (Co to jest Boxing i Unboxing?)
 
 >Boxing i Unboxing to mechanizmy w Javie, które umożliwiają automatyczne konwertowanie między typami pierwotnymi (np. int, char, boolean etc.) a ich odpowiadającymi klasami opakowującymi (Integer, Character, Boolean etc.).
 
@@ -385,7 +387,7 @@ Aby utworzyć obiekt klasy **Student**, używamy konstruktora w taki sposób:
 
 >Mechanizmy te są bardzo użyteczne, ponieważ umożliwiają łatwe używanie typów pierwotnych i klas opakowujących zamiennie, szczególnie podczas pracy z kolekcjami, które mogą przechowywać tylko obiekty, a nie typy pierwotne.
 
-#### What is Function Overriding and Overloading in Java?
+#### What is Function Overriding and Overloading in Java? (Co to jest nadpisywanie i przeciążanie funkcji w Javie?)
 
 >**Przeładowanie funkcji (Function Overloading)** w Javie występuje, gdy w klasie definiowane są dwie lub więcej metod o tej samej nazwie, ale z różną liczbą lub typami argumentów. Kompilator wybiera odpowiednią metodę do wywołania na podstawie typów argumentów podanych podczas wywołania metody.
 
@@ -424,7 +426,7 @@ Przykład przesłonięcia metody:
 >W powyższym przykładzie metoda **makeSound** w klasie **Dog** przesłania metodę **makeSound** z klasy nadrzędnej **Animal**. Dzięki temu, gdy wywołamy metodę **makeSound** na obiekcie klasy **Dog**, zostanie wywołana metoda zdefiniowana w klasie **Dog**, a nie ta z klasy **Animal**.
 
 
-#### What is static initializer?
+#### What is static initializer? (Co to jest inicjator statyczny?)
 
 >Statyczny blok inicjalizacyjny (Static Initialization Block) to specjalny blok kodu w Javie, który jest używany do inicjalizacji statycznych zmiennych w klasie. Ten blok jest wykonywany tylko raz, kiedy klasa jest załadowana do pamięci.
 
@@ -447,7 +449,7 @@ Oto przykład statycznego bloku inicjalizacyjnego:
 
 >Statyczne bloki inicjalizacyjne są użyteczne, kiedy inicjalizacja statycznej zmiennej wymaga więcej logiki, niż tylko przypisanie wartości. Może to obejmować wywoływanie metod, operacje na kolekcjach, obsługa wyjątków i tak dalej.
 
-#### What is the difference between static and abstract methods?
+#### What is the difference between static and abstract methods? (Jaka jest różnica między metodami statycznymi a abstrakcyjnymi?)
 
 >Metody statyczne i abstrakcyjne w Javie są bardzo różne.
 
@@ -485,7 +487,7 @@ Przykład metody abstrakcyjnej:
 
 >Ważnym punktem do zrozumienia jest to, że **metody abstrakcyjne nie mogą być statyczne**. Metoda abstrakcyjna jest związana z obiektem (jest wywoływana na obiekcie), a metoda statyczna nie jest związana z obiektem. Metoda abstrakcyjna musi być przesłonięta w klasie pochodnej, a metoda statyczna nie może być przesłonięta w klasie pochodnej (może być ukryta, ale to nie to samo co przesłonięcie).
 
-#### What is the main difference between StringBuffer and StringBuilder?
+#### What is the main difference between StringBuffer and StringBuilder? (Jaka jest główna różnica między StringBuffer i StringBuilder?)
 
 >**StringBuffer** i **StringBuilder** to dwie klasy w Javie, które są używane do tworzenia i modyfikowania łańcuchów znaków.
 
@@ -507,7 +509,7 @@ Poniżej znajduje się przykład użycia obu klas:
 
 >W obu przypadkach, metoda **append** jest używana do dodania łańcucha " World" do istniejącego łańcucha "Hello". Obie klasy mają bardzo podobne API, więc różnica w użyciu wynika głównie z kontekstu, w którym są używane (tj. czy istnieje ryzyko dostępu do obiektu przez wiele wątków jednocześnie czy nie).
 
-#### When we use hashCode() method?
+#### When we use hashCode() method? (Kiedy używamy metody hashCode()?)
 
 >Metoda **hashCode()** w Javie jest częścią kontraktu pomiędzy metodami **equals(Object other)** i **hashCode()**, który jest zdefiniowany w klasie **Object**, z której wszystkie inne klasy w Javie są dziedziczone.
 
@@ -544,7 +546,7 @@ Przykład nadpisania metody **hashCode()**:
 
 >W tym przypadku, metoda **hashCode()** jest nadpisana tak, aby zwracała wartość **hashCode()** dla pola **name**. Zauważ, że jeśli dwóch studentów ma to samo imię, będą mieli ten sam kod **hashCode()**. Metoda ****equals()**** jest również nadpisana, aby porównywać studentów na podstawie ich imion.
 
-#### Which class is a superclass for other classes?
+#### Which class is a superclass for other classes? (Która klasa jest nadklasą dla innych klas?)
 
 >W Javie, wszystkie klasy mają superklasę, a domyślną superklasą dla każdej klasy, która nie dziedziczy bezpośrednio z innej klasy, jest klasa **Object**. To oznacza, że **Object** jest w efekcie superklasą dla wszystkich klas w Javie.
 
